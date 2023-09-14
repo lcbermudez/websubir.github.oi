@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirección de OAuth 2.0</title>
+</head>
+<body>
+  <h1>Redirección de OAuth 2.0</h1>
+  <p>Este es un ejemplo de página de redirección para el flujo de autorización OAuth 2.0.</p>
+
+  <script>
+    // Analiza los parámetros de la URL para obtener el código de autorización
+    const params = new URLSearchParams(window.location.search);
+    const authorizationCode = params.get('code');
+
+    // Muestra el código de autorización en la página
+    if (authorizationCode) {
+      document.write('<p>Código de autorización:</p>');
+      document.write(`<pre>${authorizationCode}</pre>`);
+    } else {
+      document.write('<p>No se ha recibido un código de autorización.</p>');
+    }
+  </script>
+</body>
+</html>
